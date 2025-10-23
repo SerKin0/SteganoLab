@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|c:\\users\\serkin0\\desktop\\laboratory_work_stegan\\cshapr\\stegano\\stegano\\formstegano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|solutionrelative:stegano\\formstegano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|c:\\users\\serkin0\\desktop\\laboratory_work_stegan\\cshapr\\stegano\\stegano\\formchart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|solutionrelative:stegano\\formchart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\stegano\\formchart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|solutionrelative:stegano\\formchart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\stegano\\formstegano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|solutionrelative:stegano\\formstegano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\stegano\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E23E034-4802-400D-9B85-E05C0813F26C}|Stegano\\Stegano.csproj|solutionrelative:stegano\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormStegano.cs",
+              "DocumentMoniker": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\FormStegano.cs",
+              "RelativeDocumentMoniker": "Stegano\\FormStegano.cs",
+              "ToolTip": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\FormStegano.cs*",
+              "RelativeToolTip": "Stegano\\FormStegano.cs*",
+              "ViewState": "AgIAANQAAAAAAAAAAAAqwOYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T08:59:39.178Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormChart.cs",
+              "DocumentMoniker": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\FormChart.cs",
+              "RelativeDocumentMoniker": "Stegano\\FormChart.cs",
+              "ToolTip": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\FormChart.cs",
+              "RelativeToolTip": "Stegano\\FormChart.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T19:16:11.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormChart.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\FormChart.cs",
+              "RelativeDocumentMoniker": "Stegano\\FormChart.cs",
+              "ToolTip": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\FormChart.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Stegano\\FormChart.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T05:39:34.128Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormStegano.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\FormStegano.cs",
+              "RelativeDocumentMoniker": "Stegano\\FormStegano.cs",
+              "ToolTip": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\FormStegano.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "RelativeToolTip": "Stegano\\FormStegano.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T08:39:08.408Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\Program.cs",
+              "RelativeDocumentMoniker": "Stegano\\Program.cs",
+              "ToolTip": "C:\\Users\\SerKin0\\Desktop\\laboratory_work_stegan\\cshapr\\Stegano\\Stegano\\Program.cs",
+              "RelativeToolTip": "Stegano\\Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwBEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T08:37:47.733Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
