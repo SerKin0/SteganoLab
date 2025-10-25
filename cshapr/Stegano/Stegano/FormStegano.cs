@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Stegano
@@ -245,6 +247,69 @@ namespace Stegano
 
         private void buttonLSB_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Bitmap bitmap = new Bitmap(pictureBoxMain.Image);
+                int bitsPerChannel = 2;
+                List<byte> bitList = new List<byte>();
+
+                // Извлекаем биты
+                for (int y = 0; y < bitmap.Height; y++)
+                {
+                    for (int x = 0; x < bitmap.Width; x++)
+                    {
+                        Color pixel = bitmap.GetPixel(x, y);
+                        for (int channel = 0; channel < 3; channel++)
+                        {
+                            int value = channel == 0 ? pixel.R : channel == 1 ? pixel.G : pixel.B;
+                            for (int i = bitsPerChannel - 1; i >= 0; i--)
+                            {
+                                bitList.Add((byte)((value >> i) & 1));
+                            }
+                        }
+                    }
+                }
+
+                // Преобразуем биты в байты
+                List<byte> byteData = new List<byte>();
+                for (int i = 0; i < bitList.Count - 7; i += 8)
+                {
+                    byte val = 0;
+                    for (int j = 0; j < 8; j++)
+                    {
+                        val = (byte)((val << 1) | bitList[i + j]);
+                    }
+                    byteData.Add(val);
+                }
+
+                // Декодируем текст
+                string result = string.Empty;
+                string encodingUsed = string.Empty;
+                try
+                {
+                    result = Encoding.UTF8.GetString(byteData.ToArray()).Split('\0')[0];
+                    encodingUsed = "UTF-8";
+                }
+                catch
+                {
+                    result = "Не удалось декодировать данные.";
+                    encodingUsed = "None";
+                }
+
+                // Сохраняем результат в файл
+                string lsbOutputPath = "lsb_output.txt";
+                File.WriteAllText(lsbOutputPath, result);
+                MessageBox.Show($"Данные успешно декодированы! Сохранены в файл: {lsbOutputPath}.", "Декодировано Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при расшифровке LSB: {ex.Message}", "Ошибка",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void test(object sender, EventArgs e)
+        {
             if (pictureBoxMain.Image == null)
             {
                 MessageBox.Show("Пожалуйста, сначала загрузите изображение.", "Ошибка",
@@ -335,18 +400,6 @@ namespace Stegano
             {
                 MessageBox.Show($"Ошибка при расшифровке LSB: {ex.Message}", "Ошибка",
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private string GetChannelName(int channel)
-        {
-            switch (channel)
-
-            {
-                case 0: return "Красный";
-                case 1: return "Зеленый";
-                case 2: return "Синий";
-                default: return "Неизвестный";
             }
         }
 
