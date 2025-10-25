@@ -1,0 +1,52 @@
+## Игнорирование файлов и папок Visual Studio
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.csproj.user
+
+## Файлы сборки .NET
+*.dll
+*.exe
+*.pdb
+*.cache
+*.config
+*.runtimeconfig.json
+*.deps.json
+
+## Файлы NuGet
+packages/
+[Nn]uget/
+*.nupkg
+project.assets.json
+project.nuget.cache
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+
+## Временные файлы MSBuild
+*.csproj.BuildWithSkipAnalyzers
+*.csproj.CoreCompileInputs.cache
+*.csproj.FileListAbsolute.txt
+*.csproj.GenerateResource.cache
+*.genruntimeconfig.cache
+
+## Автогенерируемые файлы
+*.[Gg]lobal[Uu]sings.g.cs
+*.[Gg]eneratedMSBuildEditorConfig.editorconfig
+
+## Файлы ресурсов (кроме исходных .resx)
+*.resources
+!*.resx
+
+## Промежуточные файлы компиляции
+[Tt]emp[Pp]e/
+*.Designer.cs
+!*.Designer.cs
+
+## Файлы проекта (оставляем исходные)
+# *.csproj
+# *.sln
