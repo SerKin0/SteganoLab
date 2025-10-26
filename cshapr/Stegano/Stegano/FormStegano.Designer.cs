@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStegano));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.buttonDownloadImage = new System.Windows.Forms.Button();
             this.buttonLSB = new System.Windows.Forms.Button();
@@ -35,7 +36,7 @@
             this.buttonChannelHistogram = new System.Windows.Forms.Button();
             this.buttonGrayMode = new System.Windows.Forms.Button();
             this.buttonOriginalImage = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelStegano = new System.Windows.Forms.Label();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -59,7 +60,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.buttonChannelHistogram);
             this.splitContainer1.Panel1.Controls.Add(this.buttonGrayMode);
             this.splitContainer1.Panel1.Controls.Add(this.buttonOriginalImage);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.labelStegano);
             // 
             // splitContainer1.Panel2
             // 
@@ -152,16 +153,17 @@
             this.buttonOriginalImage.UseVisualStyleBackColor = true;
             this.buttonOriginalImage.Click += new System.EventHandler(this.buttonOriginalImage_Click);
             // 
-            // label1
+            // labelStegano
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sansation", 25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(13, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Stegano";
+            this.labelStegano.AutoSize = true;
+            this.labelStegano.Font = new System.Drawing.Font("Sansation", 25F, System.Drawing.FontStyle.Bold);
+            this.labelStegano.Location = new System.Drawing.Point(13, 11);
+            this.labelStegano.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
+            this.labelStegano.Name = "labelStegano";
+            this.labelStegano.Size = new System.Drawing.Size(147, 38);
+            this.labelStegano.TabIndex = 0;
+            this.labelStegano.Text = "Stegano";
+            this.labelStegano.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBoxMain
             // 
@@ -182,6 +184,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Sansation", 12F);
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FormStegano";
             this.Text = "Stegano (SerKin0)";
@@ -198,7 +201,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelStegano;
         private System.Windows.Forms.Button buttonOriginalImage;
         private System.Windows.Forms.Button buttonDownloadImage;
         private System.Windows.Forms.Button buttonLSB;

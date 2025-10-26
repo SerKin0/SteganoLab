@@ -10,15 +10,11 @@ namespace Stegano
     internal class Program
     {
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            FormStegano f = new FormStegano();
-            f.Show();
-
-            Application.Run();
+            Application.Run(new FormStegano());
         }
     }
 }

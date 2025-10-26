@@ -67,6 +67,9 @@ namespace Stegano
                     }
                 }
 
+                string grayFileName = $"gray_image_{DateTime.Now:yyyyMMdd_HHmmss}.png";
+                grayBitmap.Save(grayFileName, System.Drawing.Imaging.ImageFormat.Png);
+
                 // Используем существующую форму вместо создания новой
                 chartForm.DisplayImage(grayBitmap);
                 chartForm.Show();
@@ -203,16 +206,6 @@ namespace Stegano
             }
         }
 
-        private byte[] GetBits(byte value)
-        {
-            byte[] bits = new byte[8];
-            for (int i = 0; i < 8; i++)
-            {
-                bits[7 - i] = (byte)((value >> i) & 1);
-            }
-            return bits;
-        }
-
         private void buttonBitExtraction_Click(object sender, EventArgs e)
         {
             try
@@ -233,6 +226,9 @@ namespace Stegano
                         grayBitmap.SetPixel(x, y, bit);
                     }
                 }
+
+                string grayFileName = $"bit_extraction_{DateTime.Now:yyyyMMdd_HHmmss}.png";
+                grayBitmap.Save(grayFileName, System.Drawing.Imaging.ImageFormat.Png);
 
                 // Используем существующую форму вместо создания новой
                 chartForm.DisplayImage(grayBitmap);
@@ -262,7 +258,7 @@ namespace Stegano
                         for (int channel = 0; channel < 3; channel++)
                         {
                             int value = channel == 0 ? pixel.R : channel == 1 ? pixel.G : pixel.B;
-                            for (int i = bitsPerChannel - 1; i >= 0; i--)
+                            for (int i = bitsPerChannel-1; i >= 0; i--)
                             {
                                 bitList.Add((byte)((value >> i) & 1));
                             }
@@ -308,101 +304,6 @@ namespace Stegano
             }
         }
 
-        private void test(object sender, EventArgs e)
-        {
-            if (pictureBoxMain.Image == null)
-            {
-                MessageBox.Show("Пожалуйста, сначала загрузите изображение.", "Ошибка",
-                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                Bitmap bitmap = new Bitmap(pictureBoxMain.Image);
-                int bitsPerChannel = 2; 
-                List<byte> bitList = new List<byte>();
-
-                // Извлекаем биты
-                for (int y = 0; y < bitmap.Height; y++)
-                {
-                    for (int x = 0; x < bitmap.Width; x++)
-                    {
-                        Color pixel = bitmap.GetPixel(x, y);
-                        for (int channel = 0; channel < 3; channel++)
-                        {
-                            int value = channel == 0 ? pixel.R : channel == 1 ? pixel.G : pixel.B;
-                            for (int i = bitsPerChannel - 1; i >= 0; i--)
-                            {
-                                bitList.Add((byte)((value >> i) & 1));
-                            }
-                        }
-                    }
-                }
-
-                // Преобразуем биты в байты
-                List<byte> byteData = new List<byte>();
-                for (int i = 0; i < bitList.Count - 7; i += 8)
-                {
-                    byte val = 0;
-                    for (int j = 0; j < 8; j++)
-                    {
-                        val = (byte)((val << 1) | bitList[i + j]);
-                    }
-                    byteData.Add(val);
-                }
-
-                // Декодируем текст
-                string result = string.Empty;
-                string encodingUsed = string.Empty;
-                try
-                {
-                    result = Encoding.UTF8.GetString(byteData.ToArray()).Split('\0')[0];
-                    encodingUsed = "UTF-8";
-                }
-                catch
-                {
-                    result = "Не удалось декодировать данные.";
-                    encodingUsed = "None";
-                }
-
-                // Сохраняем результат в файл
-                string lsbOutputPath = "lsb_output.txt";
-                File.WriteAllText(lsbOutputPath, result);
-
-                // Отображаем результат в FormChart с текстовым полем
-                FormChart chartForm = new FormChart();
-                Chart chart = chartForm.Controls.OfType<Chart>().First();
-                chart.Series.Clear();
-                chart.ChartAreas[0].AxisX.Title = "";
-                chart.ChartAreas[0].AxisY.Title = "";
-                chart.Text = "Результат LSB-декодирования";
-
-                // Добавляем текстовую аннотацию
-                TextAnnotation textAnnotation = new TextAnnotation
-                {
-                    Text = $"Декодированный текст ({encodingUsed}): {result}",
-                    X = 10,
-                    Y = 10,
-                    Font = new Font("Arial", 12)
-                };
-                chart.Annotations.Add(textAnnotation);
-
-                // Сохраняем пустой график с текстом
-                string lsbChartPath = "lsb_result.png";
-                chart.SaveImage(lsbChartPath, ChartImageFormat.Png);
-
-                chartForm.ShowDialog();
-                MessageBox.Show($"Декодированный текст ({encodingUsed}): {result}\nСохранено в {lsbOutputPath}", "Успех",
-                               MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка при расшифровке LSB: {ex.Message}", "Ошибка",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void changeMode(bool mode = true)
         {
             buttonGrayMode.Enabled = mode;
@@ -410,6 +311,15 @@ namespace Stegano
             buttonLSB.Enabled = mode;
             buttonOriginalImage.Enabled = mode;
             buttonBitExtraction.Enabled = mode;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.ProcessStartInfo sInfo = new System.Diagnostics.ProcessStartInfo("https://github.com/SerKin0/SteganoLab")
+            {
+                UseShellExecute = true
+            };
+            System.Diagnostics.Process.Start(sInfo);
         }
     }
 }
